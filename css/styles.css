@@ -9,11 +9,14 @@
 :root{
     --azul-main: #093D6D;
     --azul-second: #4E6892;
-    --celeste-second: #40A2D8;
+    --background-celeste: #40A2D8;
+    --background-rosa: #ffb3f0;
+    --background-amarillo: #ffeeb8;
     --dorado: #FFC300;
     --dorado-sec: #ffc40071;
     --gris: #282A3A;
     --gris-oscuro: #1d1e29;
+    --background: #86B0FA;
 }
 
 
@@ -53,7 +56,7 @@ html, body {
 
 /** Colores body, footer*/
 footer{
-    background-color: var(--celeste-second);
+    background-color: var(--background-rosa);
 
 
 
@@ -82,7 +85,7 @@ footer i:hover {
 }
 
 body {
-    background: #86B0FA;
+    background: var(--background-amarillo);
     min-height: 100vh;
 }
 
@@ -92,7 +95,7 @@ main {
 
   /**  navbar*/
   .navbar{
-    background-color: var(--celeste-second);
+    background-color: var(--background-rosa);
 }
 
 
@@ -116,7 +119,7 @@ main {
 
 .card{
     width: auto;
-    background-color: var(--celeste-second);
+    background-color: var(--background-rosa);
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
@@ -168,7 +171,7 @@ main {
 }
 
 .glide__bullet{
-    background-color: var(--celeste-second);
+    background-color: var(--background-rosa);
 }
 
 .glide__bullet--active {
