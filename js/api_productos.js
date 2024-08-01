@@ -46,7 +46,7 @@ function crearTarjetaProducto(producto){
     card.classList.add('col-sm-12','col-md-6','col-lg-4','mb-sm-0','my-3');
 
     const cardInner = document.createElement('a');
-    cardInner.classList.add('card');
+    cardInner.classList.add('card','h-100');
     cardInner.href = `pages/detalle.html?id=${producto.id}`;
     cardInner.addEventListener('click', function(){
         gtag('event','click',{
@@ -56,7 +56,7 @@ function crearTarjetaProducto(producto){
     });
 
     const cardImg = document.createElement('img');
-    cardImg.classList.add('card-img', 'img-fluid');
+    cardImg.classList.add('card-img', 'img-fluid','custom-card-img');
     // cardImg.src = `assets/img/productos/${producto.imagenes[0]}`;
     cardImg.src = `assets/img/productos/${producto.imagen}`;
     cardImg.alt = producto.nombre;
