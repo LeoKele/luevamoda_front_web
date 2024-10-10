@@ -1,0 +1,98 @@
+[
+    {
+        "id_categoria": 1,
+        "hombre": [
+            {
+                "talle": "XS",
+                "medidaBusto": 4,
+                "medidaCintura": 8,
+                "medidaCadera": 20
+            },
+            {
+                "talle": "S",
+                "medidaBusto": 15,
+                "medidaCintura": 20,
+                "medidaCadera": 25
+              }
+
+        ],
+        "mujer":[
+            {
+                "talle": "XS",
+                "medidaBusto": 6,
+                "medidaCintura": 10,
+                "medidaCadera": 20
+            },
+            {
+                "talle": "S",
+                "medidaBusto": 17,
+                "medidaCintura": 20,
+                "medidaCadera": 30
+              }
+
+        ],
+        "nino":[
+            {
+                "talle": "14",
+                "medidaBusto": 4,
+                "medidaCintura": 8,
+                "medidaCadera": 20
+            },
+            {
+                "talle": "16",
+                "medidaBusto": 15,
+                "medidaCintura": 20,
+                "medidaCadera": 25
+              }
+
+        ]
+    },
+    {
+        "id_categoria": 2,
+        "hombre": [
+            {
+                "talle": "XS",
+                "medidaBusto": 6,
+                "medidaCintura": 78,
+                "medidaCadera": 20
+            },
+            {
+                "talle": "S",
+                "medidaBusto": 15,
+                "medidaCintura": 20,
+                "medidaCadera": 25
+              }
+
+        ],
+        "mujer":[
+            {
+                "talle": "XS",
+                "medidaBusto": 6,
+                "medidaCintura": 10,
+                "medidaCadera": 20
+            },
+            {
+                "talle": "S",
+                "medidaBusto": 17,
+                "medidaCintura": 20,
+                "medidaCadera": 30
+              }
+
+        ],
+        "nino":[
+            {
+                "talle": "14",
+                "medidaBusto": 4,
+                "medidaCintura": 8,
+                "medidaCadera": 20
+            },
+            {
+                "talle": "16",
+                "medidaBusto": 15,
+                "medidaCintura": 20,
+                "medidaCadera": 25
+              }
+
+        ]
+    }
+]

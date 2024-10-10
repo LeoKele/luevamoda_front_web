@@ -45,7 +45,7 @@
       </header>
         <main class="container" id="main_detalle">
           <div class="row mt-5">
-            <div class="carousel_detalle col-sm-12 col-md-4 my-sm-3">
+            <div class="carousel_detalle col-sm-12 col-md-6 my-sm-3 mx-auto text-center">
               <div class="images glide" id="carousel">
                 <div class="glide__track" data-glide-el="track">
                   <ul class="glide__slides" id="carousel_detalle_list">
@@ -54,12 +54,15 @@
                 <div class="glide__bullets" data-glide-el="controls[nav]" id="bullets_carousel">
                 </div>
               </div>
+              <p class="text-secondary text-center mt-4">Foto a modo figurativo</p>
             </div>
-            <div class="col-sm-12 col-md-8 text-center" id="detalle">
+            <div class="col-sm-12 col-md-6 text-center mx-auto" id="detalle">
               <h1 class="my-2 fw-bolder font-color-main" id="titulo"></h1>
+              <h4 class="my-2 fw-semibold font-color-main" id="precio">Precio por Talle: $</h4>
               <h5 class="my-2 font-color-main">Tabla de talles:</h5>
-              <div class="table-responsive d-flex justify-content-center">
-                <table class="table table-custom font-color-main text-center" id="tablaTalles">
+              <div class="table-responsive">
+                <h5 class="my-2 font-color-main">Hombres</h5>
+                <table class="table table-custom font-color-main text-center" id="tablaTallesHombre">
                   <thead>
                     <tr>
                       <th>Talle</th>
@@ -75,6 +78,42 @@
                   </tbody>
                 </table>
               </div>
+              <div class="table-responsive">
+              <h5 class="my-2 font-color-main">Mujeres</h5>
+              <table class="table table-custom font-color-main text-center" id="tablaTallesMujer">
+                <thead>
+                  <tr>
+                    <th>Talle</th>
+                    <th>Medida Busto</th>
+                    <th>Medida Cintura</th>
+                    <th>Medida Cadera</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+              <div class="table-responsive">
+              <h5 class="my-2 font-color-main">Niños</h5>
+              <table class="table table-custom font-color-main text-center" id="tablaTallesNiño">
+                <thead>
+                  <tr>
+                    <th>Talle</th>
+                    <th>Medida Busto</th>
+                    <th>Medida Cintura</th>
+                    <th>Medida Cadera</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
               <p>Pedí mas info de este producto tocando el siguiente botón: <a id="wspBtn" href=""><i class="fa-brands fa-whatsapp mx-2"></i></a></p>
             </div>
           </div>

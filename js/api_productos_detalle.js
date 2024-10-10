@@ -4,6 +4,8 @@ const productosJSON = "../assets/json/productos_detalle.json";
 const params = new URLSearchParams(window.location.search);
 const productoId = params.get("id");
 
+const tallesJSON = "../assets/json/talles.json";
+
 const cargarProducto = async (id = productoId) => {
   try {
     const response = await fetch(productosJSON); //Obtener archivo JSON local
@@ -54,42 +56,104 @@ const cargarProducto = async (id = productoId) => {
     };
     new Glide(".images", config).mount();
 
+
     //*Demas detalles
+    const responseTalles = await fetch(tallesJSON);
+    const talles = await responseTalles.json();
+
+
     const titulo = document.getElementById("titulo");
     titulo.textContent = producto[0].nombre;
 
-    const tablaTalles = document
-      .getElementById("tablaTalles")
-      .getElementsByTagName("tbody")[0];
 
-    // Limpiar la tabla
-    tablaTalles.innerHTML = "";
-    // Agregar filas de talles
-    producto[0].talles.forEach((talle) => {
-      const fila = document.createElement("tr");
+    const precio = document.getElementById("precio");
+    // Agregamos a precio.textContent el precio que obtenemos de producto[0].precio y el texto "${precio}"
+    precio.textContent = `Precio por talle: $${producto[0].precio}`
+    // precio.textContent = producto[0].precio;
 
-      const celdaTalle = document.createElement("td");
-      celdaTalle.textContent = talle.talle;
-      celdaTalle.classList.add("p-2");
-      fila.appendChild(celdaTalle);
+    // Encontrar la categoría correspondiente en el JSON de talles
+    console.log(producto[0].id_categoria)
+    const categoriaTalles = talles.find(t => t.id_categoria === producto[0].id_categoria);
+    
+    if (!categoriaTalles) {
+      console.error("No se encontró la categoría de talles para el producto.");
+      return;
+    }
 
-      const celdaBusto = document.createElement("td");
-      celdaBusto.textContent = talle.medidaBusto;
-      celdaBusto.classList.add("p-2");
-      fila.appendChild(celdaBusto);
+    // Referencias a las tablas de hombre, mujer y niño
+    const tablaHombre = document.getElementById("tablaTallesHombre").getElementsByTagName("tbody")[0];
+    const tablaMujer = document.getElementById("tablaTallesMujer").getElementsByTagName("tbody")[0];
+    const tablaNino = document.getElementById("tablaTallesNiño").getElementsByTagName("tbody")[0];
 
-      const celdaCintura = document.createElement("td");
-      celdaCintura.textContent = talle.medidaCintura;
-      celdaCintura.classList.add("p-2");
-      fila.appendChild(celdaCintura);
+    // Limpiar las tablas
+    tablaHombre.innerHTML = "";
+    tablaMujer.innerHTML = "";
+    tablaNino.innerHTML = "";
 
-      const celdaCadera = document.createElement("td");
-      celdaCadera.textContent = talle.medidaCadera;
-      celdaCadera.classList.add("p-2");
-      fila.appendChild(celdaCadera);
+    // Función para agregar filas a la tabla
+    const agregarFila = (tabla, talles) => {
+      talles.forEach((talle) => {
+        const fila = document.createElement("tr");
 
-      tablaTalles.appendChild(fila);
-    });
+        const celdaTalle = document.createElement("td");
+        celdaTalle.textContent = talle.talle;
+        celdaTalle.classList.add("p-2");
+        fila.appendChild(celdaTalle);
+
+        const celdaBusto = document.createElement("td");
+        celdaBusto.textContent = talle.medidaBusto;
+        celdaBusto.classList.add("p-2");
+        fila.appendChild(celdaBusto);
+
+        const celdaCintura = document.createElement("td");
+        celdaCintura.textContent = talle.medidaCintura;
+        celdaCintura.classList.add("p-2");
+        fila.appendChild(celdaCintura);
+
+        const celdaCadera = document.createElement("td");
+        celdaCadera.textContent = talle.medidaCadera;
+        celdaCadera.classList.add("p-2");
+        fila.appendChild(celdaCadera);
+
+        tabla.appendChild(fila);
+      });
+  };
+
+  // Llenar las tablas de hombre, mujer y niño
+  agregarFila(tablaHombre, categoriaTalles.hombre);
+  agregarFila(tablaMujer, categoriaTalles.mujer);
+  agregarFila(tablaNino, categoriaTalles.nino);
+
+    // const tablaTalles = document
+    //   .getElementById("tablaTallesHombre")
+    //   .getElementsByTagName("tbody")[0];
+
+    // // Agregar filas de talles
+    // producto[0].talles.forEach((talle) => {
+    //   const fila = document.createElement("tr");
+
+    //   const celdaTalle = document.createElement("td");
+    //   celdaTalle.textContent = talle.talle;
+    //   celdaTalle.classList.add("p-2");
+    //   fila.appendChild(celdaTalle);
+
+    //   const celdaBusto = document.createElement("td");
+    //   celdaBusto.textContent = talle.medidaBusto;
+    //   celdaBusto.classList.add("p-2");
+    //   fila.appendChild(celdaBusto);
+
+    //   const celdaCintura = document.createElement("td");
+    //   celdaCintura.textContent = talle.medidaCintura;
+    //   celdaCintura.classList.add("p-2");
+    //   fila.appendChild(celdaCintura);
+
+    //   const celdaCadera = document.createElement("td");
+    //   celdaCadera.textContent = talle.medidaCadera;
+    //   celdaCadera.classList.add("p-2");
+    //   fila.appendChild(celdaCadera);
+
+    //   tablaTalles.appendChild(fila);
+    // });
 
     const wspBtn = document.getElementById("wspBtn");
     wspBtn.href = `https://api.whatsapp.com/send?phone=+541133890751&text=Hola!,%20queria%20encargarte%20el%20producto%20%22${producto[0].nombre.replace(
@@ -135,3 +199,7 @@ function binarySearchById(arr, targetId) {
 
   return null; // Si no se encuentra el id
 }
+
+
+
+

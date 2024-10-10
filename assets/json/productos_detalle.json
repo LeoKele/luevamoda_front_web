@@ -2,35 +2,10 @@
   {
     "id": 1,
     "nombre": "Remera Bebé",
-    "id_categoria": 1,
+    "id_categoria": 2,
     "listado": "1",
-    "talles": [
-      {
-        "talle": "XXS",
-        "medidaBusto": 4,
-        "medidaCintura": 8,
-        "medidaCadera": 20
-      },
-      {
-        "talle": "XS",
-        "medidaBusto": 6,
-        "medidaCintura": 10,
-        "medidaCadera": 25
-      },
-      {
-        "talle": "S",
-        "medidaBusto": 15,
-        "medidaCintura": 20,
-        "medidaCadera": 25
-      },
-      {
-        "talle": "L",
-        "medidaBusto": 25,
-        "medidaCintura": 30,
-        "medidaCadera": 55
-      }
-    ],
-    "imagenes": "1_1.png,1_2.png,1_3.png"
+    "imagenes": "1_1.png,1_2.png,1_3.png",
+    "precio": 3000
   },
   {
     "id": 12,
